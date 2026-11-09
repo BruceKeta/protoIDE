@@ -1,0 +1,140 @@
+{
+  "formatVersion": 1,
+  "name": "Démo",
+  "components": [
+    {
+      "id": "cmp-bouton",
+      "name": "Bouton",
+      "description": "Bouton cliquable",
+      "properties": [
+        {
+          "name": "libelle",
+          "type": "string",
+          "defaultValue": "OK"
+        },
+        {
+          "name": "largeur",
+          "type": "number",
+          "defaultValue": 120
+        },
+        {
+          "name": "actif",
+          "type": "boolean",
+          "defaultValue": true
+        },
+        {
+          "name": "style",
+          "type": "enum",
+          "defaultValue": "primaire",
+          "options": [
+            "primaire",
+            "secondaire",
+            "lien"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cmp-champ",
+      "name": "ChampTexte",
+      "description": "Zone de saisie",
+      "properties": [
+        {
+          "name": "etiquette",
+          "type": "string",
+          "defaultValue": ""
+        },
+        {
+          "name": "obligatoire",
+          "type": "boolean",
+          "defaultValue": false
+        },
+        {
+          "name": "longueurMax",
+          "type": "number",
+          "defaultValue": 255
+        }
+      ]
+    },
+    {
+      "id": "cmp-mw5vit93-7xp2rv",
+      "name": "MyComposant",
+      "properties": []
+    }
+  ],
+  "root": {
+    "kind": "folder",
+    "id": "root",
+    "name": "Démo",
+    "children": [
+      {
+        "kind": "folder",
+        "id": "dir-ecrans",
+        "name": "ecrans",
+        "children": [
+          {
+            "kind": "folder",
+            "id": "dir-connexion",
+            "name": "connexion",
+            "children": [
+              {
+                "kind": "instance",
+                "id": "inst-login",
+                "name": "champLogin",
+                "componentId": "cmp-champ",
+                "values": {
+                  "etiquette": "Identifiant",
+                  "obligatoire": true
+                }
+              },
+              {
+                "kind": "instance",
+                "id": "inst-mdp",
+                "name": "champMotDePasse",
+                "componentId": "cmp-champ",
+                "values": {
+                  "etiquette": "Mot de passe",
+                  "obligatoire": true,
+                  "longueurMax": 64
+                }
+              },
+              {
+                "kind": "instance",
+                "id": "inst-valider",
+                "name": "boutonValider",
+                "componentId": "cmp-bouton",
+                "values": {
+                  "libelle": "Se connecter"
+                }
+              }
+            ]
+          },
+          {
+            "kind": "folder",
+            "id": "dir-accueil",
+            "name": "accueil",
+            "children": [
+              {
+                "kind": "instance",
+                "id": "inst-deco",
+                "name": "boutonDeconnexion",
+                "componentId": "cmp-bouton",
+                "values": {
+                  "libelle": "Déconnexion",
+                  "style": "lien"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "instance",
+        "id": "inst-mw5vjcsc-7p2ezk",
+        "componentId": "cmp-mw5vit93-7xp2rv",
+        "values": {},
+        "name": "myComposant"
+      }
+    ]
+  }
+}

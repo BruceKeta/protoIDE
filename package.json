@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "proto-ide",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=20",
+    "yarn": ">=1.7.0 <2"
+  },
+  "workspaces": [
+    "proto-ide-ext",
+    "browser-app"
+  ],
+  "scripts": {
+    "build": "yarn --cwd proto-ide-ext build && yarn --cwd browser-app build",
+    "start": "yarn --cwd browser-app start",
+    "watch": "yarn --cwd proto-ide-ext watch"
+  }
+}

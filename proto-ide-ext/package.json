@@ -1,0 +1,38 @@
+{
+  "name": "proto-ide-ext",
+  "version": "0.1.0",
+  "description": "Extension Theia : déclaration de composants et arborescence d'instances",
+  "keywords": [
+    "theia-extension"
+  ],
+  "license": "MIT",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "1.76.0",
+    "@theia/editor": "1.76.0",
+    "@theia/filesystem": "1.76.0",
+    "@theia/workspace": "1.76.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "rimraf": "^5.0.10",
+    "typescript": "~5.4.5"
+  },
+  "scripts": {
+    "prepare": "yarn clean && yarn build",
+    "clean": "rimraf lib tsconfig.tsbuildinfo",
+    "build": "tsc -b",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/proto-ide-frontend-module"
+    }
+  ]
+}
